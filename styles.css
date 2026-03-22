@@ -1,0 +1,192 @@
+ /* CSS Variables for strict Black & White theme */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #000000;
+            --gray-light: #f4f4f4;
+            --gray-dark: #333333;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--bg-color);
+            border-bottom: 2px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Home / Hero Section */
+        #home {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            border-bottom: none;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid var(--accent-color);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+        }
+
+        /* Grid Layouts for Content */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--gray-light);
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card h3 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul.checklist {
+            list-style-type: square;
+            margin-left: 1.5rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background-color: var(--gray-dark);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-color);
+            font-style: italic;
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer a {
+            color: var(--bg-color);
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* In a real app, add a hamburger menu here */
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
